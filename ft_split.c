@@ -16,7 +16,7 @@ static void	free_array(char **arr, int count)
 {
 	while (--count >= 0)
 		free(arr[count]);
-		free(arr);
+	free(arr);
 }
 
 static int	ft_wordcount(char const *s, int c)
@@ -42,7 +42,7 @@ static int	ft_wordcount(char const *s, int c)
 	return (count);
 }
 
-static int	**fillarray(char **dest, char const *s, char c)
+static int	fillarray(char **dest, char const *s, char c)
 {
 	int		i;
 	int		j;
@@ -57,7 +57,7 @@ static int	**fillarray(char **dest, char const *s, char c)
 			start = i;
 			while (s[i] && s[i] != c)
 				i++;
-			dest[j] = ft_substr(&s, start, i - start);
+			dest[j] = ft_substr(s, start, i - start);
 			if (!dest[j])
 				return (free_array(dest, j), 0);
 			j++;
